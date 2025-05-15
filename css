@@ -1,0 +1,195 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a2228; /* Dark base - close to black */
+    color: #eff3f2; /* Off-white for readability */
+}
+
+/* Container wrapper (you can replace with Bootstrap container-fluid in markup) */
+.container {
+    display: flex;
+    height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+/* Left Info Panel */
+.info-panel {
+    flex: 1;
+    background-color: #232f36; /* Slightly lighter dark */
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 3px solid #307fad; /* Primary blue border */
+}
+
+    .info-panel h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        font-weight: 900;
+    }
+
+.welcome {
+    color: #307fad;
+}
+
+.brand {
+    color: #90c3db;
+}
+
+.highlight1 {
+    color: #ca5840;
+}
+
+.info-panel p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #eff3f2cc;
+    max-width: 400px;
+}
+
+/* Right Login Panel */
+.login-panel {
+    flex: 1;
+    background-color: #1a2228;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #eff3f2;
+}
+
+.logo img {
+    width: 140px;
+    margin-bottom: 25px;
+}
+
+.login-panel h2 {
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: #307fad;
+}
+
+/* Form Fields */
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    border: 2px solid #307fad;
+    border-radius: 5px;
+    background-color: #232f36;
+    color: #eff3f2;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+    form input[type="text"]::placeholder,
+    form input[type="password"]::placeholder {
+        color: #90c3db;
+    }
+
+    form input[type="text"]:focus,
+    form input[type="password"]:focus {
+        border-color: #ca5840;
+        outline: none;
+    }
+
+/* Options: Remember me + links */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+}
+
+    .options label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #eff3f2;
+    }
+
+    .options input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        accent-color: #ca5840;
+        cursor: pointer;
+    }
+
+    .options .links a {
+        color: #d48c84;
+        text-decoration: none;
+        margin-left: 15px;
+        transition: color 0.3s;
+    }
+
+        .options .links a:hover {
+            color: #ca5840;
+        }
+
+/* Submit Button */
+button[type="submit"] {
+    width: 100%;
+    padding: 15px 0;
+    background-color: #ca5840;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #eff3f2;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    button[type="submit"]:hover {
+        background-color: #d48c84;
+    }
+
+/* Signup text */
+.signup-text {
+    margin-top: 25px;
+    font-size: 1rem;
+    color: #eff3f2cc;
+}
+
+    .signup-text a {
+        color: #307fad;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+        .signup-text a:hover {
+            text-decoration: underline;
+        }
+
+/* Responsive with Bootstrap grid in mind */
+
+/* When container is used with Bootstrap col classes, these paddings get replaced,
+   but keep fallback for small screens */
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .info-panel, .login-panel {
+        flex: none;
+        padding: 40px 30px;
+        border: none;
+    }
+
+    .info-panel {
+        border-bottom: 3px solid #307fad;
+    }
+}
